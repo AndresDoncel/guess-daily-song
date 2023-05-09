@@ -6,7 +6,6 @@ import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@ang
   standalone: true,
   imports: [NgIf],
   template: `
-    <button class="mt-2 mb-2 px-6 py-2 text-gray-100 rounded bg-gradient-to-r from-cyan-500 to-blue-500" (click)="startDaily = !startDaily" *ngIf="!startDaily">Comenzar</button>
     <ng-container *ngIf="startDaily">
       <div class="flex justify-center align-middle">
         <audio autoplay #audio style="width: 100%;" controls>
@@ -20,7 +19,7 @@ export class AudioPlayerComponent {
 
   constructor(private cdr: ChangeDetectorRef) { }
 
-  startDaily: boolean = false;
+  @Input() startDaily: boolean = false;
 
   @ViewChild('audio') audioRef!: ElementRef;
 

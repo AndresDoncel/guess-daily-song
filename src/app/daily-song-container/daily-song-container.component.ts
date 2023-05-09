@@ -21,12 +21,14 @@ import { DailySongFooterComponent } from './daily-song-footer/daily-song-footer.
         <app-daily-song-title></app-daily-song-title>
 
         <app-audio-player
+         [startDaily]="startDaily"
          [audioSource]="currentOption().audio || dailySong()?.options?.[0]?.audio">
         </app-audio-player>
 
-        <app-daily-song-description></app-daily-song-description>
+        <app-daily-song-description (evStartDaily)="startDaily = $event"></app-daily-song-description>
 
         <app-daily-song-form
+          [startDaily]="startDaily"
           [correctOptionSelected]="currentOption().correctOptionSelected"
           [dailySongTries]="dailySong()?.options?.length"
           (formSubmitted)="handleFormSubmitted($event)">
@@ -66,9 +68,14 @@ export class DailySongContainerComponent {
   // Component signals
   dailySong = this.dailySongService.dailySong;
   currentOption = this.dailySongService.currentOption;
+  startDaily: boolean = false;
 
   handleFormSubmitted(song: string) {
     return this.dailySongService.onSongSubmitted(song)
+  }
+
+  onStartDaily(state: boolean) {
+    this.startDaily = state
   }
 
 }

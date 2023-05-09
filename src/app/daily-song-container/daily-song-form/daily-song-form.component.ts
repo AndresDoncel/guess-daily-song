@@ -7,7 +7,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   standalone: true,
   imports: [ReactiveFormsModule, NgIf],
   template: `
-    <div class="px-6 pt-4 pb-2">
+    <div *ngIf="startDaily" class="px-6 pt-4 pb-2">
     <form [formGroup]="songForm" (ngSubmit)="sendForm(songForm)" class="w-full max-w-sm">
       <div class="flex items-center border-b border-teal-500 py-2">
         <input formControlName="song"
@@ -28,6 +28,7 @@ export class DailySongFormComponent {
 
   NUM_TRIES: number = 3;
 
+  @Input() startDaily: boolean = false;
   @Output() formSubmitted: EventEmitter<string> = new EventEmitter();
   @Input() dailySongTries: number | undefined;
 
