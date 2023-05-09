@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "dist/guest-daily-song",
     "ignore": [
       "firebase.json",
       "**/.*",
