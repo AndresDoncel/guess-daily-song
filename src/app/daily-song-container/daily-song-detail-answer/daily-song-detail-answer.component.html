@@ -1,13 +1,13 @@
 <div *ngIf="correctOptionSelected">
-  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
     <a href="#">
       <img width="100%" class="rounded-t-lg" [src]="songInfo?.imageAlbumLink" alt="" />
     </a>
     <div class="p-5">
       <a href="#">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{songInfo?.name}}</h5>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{songInfo?.name}}</h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Encuentra la canción en Sportify o el video oficial
+      <p class="mb-3 font-normal text-gray-700">Encuentra la canción en Sportify o el video oficial
         en Youtube</p>
       <a [href]="songInfo?.spotifySong" target="_blank">
         <button type="button" data-te-ripple-init data-te-ripple-color="light"
