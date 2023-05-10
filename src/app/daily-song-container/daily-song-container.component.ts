@@ -14,7 +14,7 @@ import { DailySongFooterComponent } from './daily-song-footer/daily-song-footer.
   standalone: true,
   template: `
     <div
-      [style.height]="currentOption().correctOptionSelected ? '100%': '100vh' "
+      [style.height]="dailySong()?.options?.length === 0 || currentOption().correctOptionSelected ? '100%': '100vh' "
       *ngIf="dailySong()"
       class="pb-20 h-100 flex items-center justify-center">
       <div class="max-w-sm rounded overflow-hidden shadow-lg p-1">
@@ -40,6 +40,7 @@ import { DailySongFooterComponent } from './daily-song-footer/daily-song-footer.
       </app-daily-song-feedback>
 
       <app-daily-song-detail-answer
+        [dailySongOptions]="dailySong()?.options"
         [songInfo]="dailySong()?.song"
         [correctOptionSelected]="currentOption().correctOptionSelected">
       </app-daily-song-detail-answer>
