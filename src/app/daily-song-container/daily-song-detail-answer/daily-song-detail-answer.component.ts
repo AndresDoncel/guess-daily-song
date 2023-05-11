@@ -13,6 +13,7 @@ export class DailySongDetailAnswerComponent {
   @Input() dailySongOptions!: SongOption[] | undefined;
   @Input() correctOptionSelected: boolean | undefined = false;
   @Input() songInfo!: Song | undefined;
+  @Input() finalPoints!: number;
 
   onGoAction(action: string, url: string | undefined = undefined): void {
     switch (action) {
@@ -37,7 +38,7 @@ export class DailySongDetailAnswerComponent {
   share() {
     navigator.share({
       title: 'Guess the song Daily',
-      text: 'Te reto a que logres adivinar la canción',
+      text: `Te reto a que logres adivinar la canción, mi puntaje fue ${this.finalPoints}`,
       url: 'https://daily-song.web.app/'
     })
       .then(() => console.log('Successful share'))

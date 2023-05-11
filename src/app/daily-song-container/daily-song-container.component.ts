@@ -35,11 +35,13 @@ import { DailySongFooterComponent } from './daily-song-footer/daily-song-footer.
         </app-daily-song-form>
 
         <app-daily-song-feedback
+        [finalPoints]="finalPoints()"
         [correctOptionSelected]="currentOption().correctOptionSelected"
         [dailySongOptions]="dailySong()?.options">
       </app-daily-song-feedback>
 
       <app-daily-song-detail-answer
+        [finalPoints]="finalPoints()"
         [dailySongOptions]="dailySong()?.options"
         [songInfo]="dailySong()?.song"
         [correctOptionSelected]="currentOption().correctOptionSelected">
@@ -69,6 +71,7 @@ export class DailySongContainerComponent {
   // Component signals
   dailySong = this.dailySongService.dailySong;
   currentOption = this.dailySongService.currentOption;
+  finalPoints = this.dailySongService.dailyPoints;
   startDaily: boolean = false;
 
   handleFormSubmitted(song: string) {

@@ -12,6 +12,7 @@ export class DailySongFeedbackComponent {
 
   NUM_TRIES: number = 3;
 
+  @Input() finalPoints!: number;
   @Input() dailySongOptions!: SongOption[] | undefined;
   @Input() correctOptionSelected: boolean | undefined = false;
 
