@@ -12,6 +12,8 @@ import { DOCUMENT } from "@angular/common";
 export class DailySongService {
 
   WIN_AUDIO_FEEDBACK: string = 'assets/audio/correct_answer.mp3'
+  FAIL_AUDIO_FEEDBACK: string = 'assets/audio/incorrect_answer.mp3'
+  SCROLL_CONTAINER: string = '#detailContainerScroll'
 
   db: AngularFireDatabase = inject(AngularFireDatabase);
   document: Document = inject(DOCUMENT)
@@ -26,7 +28,6 @@ export class DailySongService {
     filter(Boolean),
     switchMap((song: string) => {
       const correctAnswer = this.dailySong()?.correctAnswer?.toLocaleLowerCase() ?? '';
-
       if (song.toLocaleLowerCase() === correctAnswer) {
         this.shoot();
         this.calculatePoint();
@@ -34,6 +35,10 @@ export class DailySongService {
       } else {
         this.dailySong()?.options.shift();
         const nextOption = this.dailySong()?.options[0]
+        if (!nextOption) {
+          this.scrollToElement(this.SCROLL_CONTAINER);
+          this.playAudioFeedback(this.FAIL_AUDIO_FEEDBACK);
+        }
         return nextOption ? of(nextOption as SongOption) : of({} as SongOption);
       }
     })
@@ -83,19 +88,19 @@ export class DailySongService {
         }
       })
       this.playAudioFeedback(this.WIN_AUDIO_FEEDBACK);
-      setTimeout(() => {
-        this.scrollToElement('#detailContainerScroll');
-      }, 1000);
+      this.scrollToElement(this.SCROLL_CONTAINER);
     } catch (e) {
       console.log('error creating confetti', e)
     }
   }
 
   scrollToElement(selector: string) {
-    const element = this.document.querySelector(selector);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const element = this.document.querySelector(selector);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 800);
   }
 
   playAudioFeedback(audioUrl: string) {
