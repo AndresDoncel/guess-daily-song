@@ -36,8 +36,10 @@ export class DailySongDetailAnswerComponent {
   }
 
   share() {
+    const imageFile = new File([''], 'image_app.jpg', {type: 'image/jpeg'});
     navigator.share({
       title: 'Guess the song Daily',
+      files: [imageFile],
       text: `Te reto a que logres adivinar la canción, mi puntaje fue ${this.finalPoints}`,
       url: 'https://daily-song.web.app/'
     })
