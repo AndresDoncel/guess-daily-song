@@ -1,16 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
-import { DailySongService } from './daily-song.service';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { DailySongService } from '../../shared/services/daily-song.service';
 import { NgIf } from '@angular/common';
-import { DailySongTitleComponent } from './daily-song-title/daily-song-title.component';
-import { AudioPlayerComponent } from './audio-player/audi-player.component';
-import { DailySongDescriptionComponent } from './daily-song-description/daily-song-description.component';
-import { DailySongFormComponent } from './daily-song-form/daily-song-form.component';
-import { DailySongFeedbackComponent } from './daily-song-feedback/daily-song-feedback.component';
-import { DailySongDetailAnswerComponent } from './daily-song-detail-answer/daily-song-detail-answer.component';
-import { DailySongFooterComponent } from './daily-song-footer/daily-song-footer.component';
+import { DailySongTitleComponent } from '../components/daily-song-title/daily-song-title.component';
+import { AudioPlayerComponent } from '../components/audio-player/audi-player.component';
+import { DailySongDescriptionComponent } from '../components/daily-song-description/daily-song-description.component';
+import { DailySongFormComponent } from '../components/daily-song-form/daily-song-form.component';
+import { DailySongFeedbackComponent } from '../components/daily-song-feedback/daily-song-feedback.component';
+import { DailySongDetailAnswerComponent } from '../components/daily-song-detail-answer/daily-song-detail-answer.component';
+import { DailySongFooterComponent } from '../components/daily-song-footer/daily-song-footer.component';
 
 @Component({
-  selector: 'app-daily-song-container',
+  selector: 'app-daily-song',
   standalone: true,
   template: `
     <div
