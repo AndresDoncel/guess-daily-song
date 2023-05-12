@@ -75,11 +75,7 @@ export class DailySongContainerComponent {
   startDaily: boolean = false;
 
   handleFormSubmitted(song: string) {
-    return this.dailySongService.onSongSubmitted(song)
-  }
-
-  onStartDaily(state: boolean) {
-    this.startDaily = state
+    return this.dailySongService.onSongSubmitted(song.trim())
   }
 
 }
