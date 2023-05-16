@@ -7,7 +7,7 @@ import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@ang
   imports: [NgIf],
   template: `
     <ng-container *ngIf="startDaily">
-      <div class="flex justify-center align-middle">
+      <div class="flex justify-center align-middle px-6">
         <audio autoplay #audio style="width: 100%;" controls>
         <source [src]="audioSrc" type="audio/mpeg" />
       </audio>

@@ -17,7 +17,7 @@ import { DailySongFooterComponent } from '../components/daily-song-footer/daily-
       [style.height]="dailySong()?.options?.length === 0 || currentOption().correctOptionSelected ? '100%': '100vh' "
       *ngIf="dailySong()"
       class="pb-20 h-100 flex items-center justify-center">
-      <div class="max-w-sm rounded overflow-hidden shadow-lg p-1">
+      <div class="max-w-md rounded overflow-hidden shadow-lg p-1">
         <app-daily-song-title></app-daily-song-title>
 
         <app-audio-player
