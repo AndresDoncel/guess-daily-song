@@ -1,0 +1,10 @@
+<div class="flip-card">
+  <div class="flip-card-inner" [ngClass]="{'flipped': isFlipped}">
+    <div class="flip-card-front">
+      <ng-content select=".front-content"></ng-content>
+    </div>
+    <div class="flip-card-back">
+      <ng-content select=".back-content"></ng-content>
+    </div>
+  </div>
+</div>

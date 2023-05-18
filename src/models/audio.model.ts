@@ -17,4 +17,5 @@ export interface Song {
   spotifySong: string,
   youtubeLink: string,
   imageAlbumLink: string,
+  funFact: string
 }

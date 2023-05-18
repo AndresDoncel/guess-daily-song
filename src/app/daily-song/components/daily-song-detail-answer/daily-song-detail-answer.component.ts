@@ -1,12 +1,20 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Song, SongOption } from 'src/models/audio.model';
+import { DailySongFlipCardComponent } from '../daily-song-flip-card/daily-song-flip-card.component';
+import { DailySongFunFactComponent } from '../daily-song-fun-fack/daily-song-fun-fact.component';
+import { DailySongAlbumInfoComponent } from '../daily-song-album-info/daily-song-album-info.component';
 
 @Component({
   selector: 'app-daily-song-detail-answer',
   templateUrl: './daily-song-detail-answer.component.html',
-  imports: [NgIf],
-  standalone: true
+  standalone: true,
+  imports: [
+    NgIf,
+    DailySongFlipCardComponent,
+    DailySongFunFactComponent,
+    DailySongAlbumInfoComponent
+  ],
 })
 export class DailySongDetailAnswerComponent {
 
@@ -15,34 +23,10 @@ export class DailySongDetailAnswerComponent {
   @Input() songInfo!: Song | undefined;
   @Input() finalPoints!: number;
 
-  onGoAction(action: string, url: string | undefined = undefined): void {
-    switch (action) {
-      case 'youtube':
-      case 'spotify':
-        window.open(url)
-        break;
+  isFlipped = false;
 
-      case 'share':
-        this.onShare()
-    }
-  }
-
-  onShare() {
-    if (navigator) {
-      this.share();
-    } else {
-      console.log('Web Share API is not supported.');
-    }
-  }
-
-  share() {
-    navigator.share({
-      title: 'Guess the song Daily',
-      text: `Te reto a que logres adivinar la canción, mi puntaje fue ${this.finalPoints}`,
-      url: 'https://daily-song.web.app/'
-    })
-      .then(() => console.log('Successful share'))
-      .catch((error) => console.log('Error sharing:', error));
+  flipCard(value: boolean) {
+    this.isFlipped = value;
   }
 
 }
