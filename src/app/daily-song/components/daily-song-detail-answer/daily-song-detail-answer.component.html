@@ -1,7 +1,7 @@
 <div *ngIf="correctOptionSelected || dailySongOptions?.length === 0">
   <app-daily-song-flip-card [isFlipped]="isFlipped">
     <div class="front-content">
-      <app-daily-song-album-info (evFlipCardInfo)="flipCard($event)" [songInfo]="songInfo"></app-daily-song-album-info>
+      <app-daily-song-album-info [finalPoints]="finalPoints" (evFlipCardInfo)="flipCard($event)" [songInfo]="songInfo"></app-daily-song-album-info>
     </div>
     <div class="back-content">
       <app-daily-song-fun-fact [funFact]="songInfo?.funFact" (evFlipCardFunFact)="flipCard($event)"></app-daily-song-fun-fact>
