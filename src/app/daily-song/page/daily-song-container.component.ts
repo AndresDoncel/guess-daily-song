@@ -21,8 +21,9 @@ import { DailySongFooterComponent } from '../components/daily-song-footer/daily-
         <app-daily-song-title></app-daily-song-title>
 
         <app-audio-player
-         [startDaily]="startDaily"
-         [audioSource]="currentOption().audio || dailySong()?.options?.[0]?.audio">
+          *ngIf="startDaily"
+          [startDaily]="startDaily"
+          [audioSource]="currentOption().audio || dailySong()?.options?.[0]?.audio">
         </app-audio-player>
 
         <app-daily-song-description (evStartDaily)="startDaily = $event"></app-daily-song-description>
@@ -59,7 +60,7 @@ import { DailySongFooterComponent } from '../components/daily-song-footer/daily-
     DailySongFormComponent,
     DailySongFeedbackComponent,
     DailySongDetailAnswerComponent,
-    DailySongFooterComponent
+    DailySongFooterComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
