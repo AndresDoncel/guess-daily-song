@@ -1,0 +1,30 @@
+{
+  "dailySongDescription": {
+    "title": "Guess de song",
+    "description": "You have the opportunity to guess the title of a song, but you only have three attempts! With each attempt, the length of the song will increase by a few seconds, but you will earn fewer points.",
+    "question": "Are you ready for the musical challenge?",
+    "start": "Start"
+  },
+  "dailySongForm": {
+    "input": "Write the song 🎵 🎸"
+  },
+  "dailySongFeedback": {
+    "fail": "You failed!",
+    "failState": "You have only",
+    "try": "attempt left",
+    "tries": "attempts left",
+    "failDescription": "You failed to guess the song 😔",
+    "failDescription2": "Try again tomorrow with a new challenge",
+    "win": "Congratulations!",
+    "winDescription" : "Your answer is correct.🥳",
+    "points": "Final score."
+  },
+  "dailySongAlbumInfo" : {
+    "info": "Find the song on Spotify or the official video on YouTube",
+    "funFact": "Get to know the fun fact 🤔"
+  },
+  "dailySongFunFact": {
+    "title1": "Did you",
+    "title2": "know?"
+  }
+}

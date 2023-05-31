@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DailySongService } from '../../shared/services/daily-song.service';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { DailySongTitleComponent } from '../components/daily-song-title/daily-song-title.component';
 import { AudioPlayerComponent } from '../components/audio-player/audi-player.component';
 import { DailySongDescriptionComponent } from '../components/daily-song-description/daily-song-description.component';
@@ -8,6 +8,7 @@ import { DailySongFormComponent } from '../components/daily-song-form/daily-song
 import { DailySongFeedbackComponent } from '../components/daily-song-feedback/daily-song-feedback.component';
 import { DailySongDetailAnswerComponent } from '../components/daily-song-detail-answer/daily-song-detail-answer.component';
 import { DailySongFooterComponent } from '../components/daily-song-footer/daily-song-footer.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-daily-song',
@@ -59,7 +60,7 @@ import { DailySongFooterComponent } from '../components/daily-song-footer/daily-
     DailySongFormComponent,
     DailySongFeedbackComponent,
     DailySongDetailAnswerComponent,
-    DailySongFooterComponent
+    DailySongFooterComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

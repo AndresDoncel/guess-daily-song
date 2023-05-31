@@ -1,10 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { Song } from 'src/models/audio.model';
 
 @Component({
   selector: 'app-daily-song-album-info',
   templateUrl: './daily-song-album-info.component.html',
-  standalone: true
+  standalone: true,
+  imports: [TranslateModule]
 })
 export class DailySongAlbumInfoComponent {
   @Input() finalPoints!: number;

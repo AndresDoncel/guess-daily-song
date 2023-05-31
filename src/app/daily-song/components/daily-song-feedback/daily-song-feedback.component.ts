@@ -1,10 +1,11 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { SongOption } from 'src/models/audio.model';
 
 @Component({
   selector: 'app-daily-song-feedback',
-  imports: [NgIf],
+  imports: [NgIf, TranslateModule],
   templateUrl: './daily-song-feedback.component.html',
   standalone: true
 })

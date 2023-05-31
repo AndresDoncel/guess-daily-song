@@ -9,16 +9,14 @@
         {{songInfo?.name}}
         <span style="cursor: pointer;
         cursor: pointer;
-        width: 150px;
         margin: 0 auto;
         margin-top: 12px;" (click)="evFlipCardInfo.emit(true)"
           class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
-          Conoce el fun fact 🤔
+          {{'dailySongAlbumInfo.funFact' | translate}}
         </span>
       </h5>
     </a>
-    <p class="mb-3 font-normal text-gray-700">Encuentra la canción en Sportify o el video oficial
-      en Youtube</p>
+    <p class="mb-3 font-normal text-gray-700">{{'dailySongAlbumInfo.info' | translate}}</p>
 
     <div class="flex flex-row justify-between mb-2">
       <div>

@@ -8,13 +8,17 @@
     </svg>
     <span class="sr-only">Info</span>
     <div *ngIf="dailySongOptions.length !== 0 else noTries">
-      <span class="font-medium">Fallaste!</span> solo te quedan {{dailySongOptions.length}}
-      {{dailySongOptions.length === 1 ? 'intento' : 'intentos'}}
+      <span class="font-medium">{{'dailySongFeedback.fail' | translate}}</span> {{'dailySongFeedback.failState' |
+      translate}} {{dailySongOptions.length}}
+      {{dailySongOptions.length === 1 ? ('dailySongFeedback.try' | translate) : ('dailySongFeedback.tries' |
+      translate)}}
     </div>
     <ng-template #noTries>
       <div class="flex flex-col">
-        <span class="font-medium mr-1">No lograste adivinar la canción 😔</span> <a class="underline" href="/">Intenta
-          mañana con un nuevo reto</a>
+        <span class="font-medium mr-1">{{'dailySongFeedback.failDescription' | translate}}</span> <a class="underline"
+          href="/">
+          {{'dailySongFeedback.failDescription2' | translate}}
+        </a>
       </div>
     </ng-template>
   </div>
@@ -30,7 +34,9 @@
     </svg>
     <span class="sr-only">Info</span>
     <div>
-      <span class="font-medium">Felicidades!</span> Tu respuesta es correcta.🥳 <br> Puntaje: <b>{{finalPoints}}</b>
+      <span class="font-medium">{{'dailySongFeedback.win' | translate}}</span>
+      {{'dailySongFeedback.winDescription' | translate}} <br>
+      {{'dailySongFeedback.points' | translate}}: <b>{{finalPoints}}</b>
     </div>
   </div>
 </div>

@@ -1,0 +1,30 @@
+{
+  "dailySongDescription": {
+    "title": "Adivina la canción",
+    "description": "Tienes la oportunidad de adivinar el título de una canción, ¡pero tienes solo tres intentos! Con cada intento, el tiempo de la canción aumentará unos segundos, pero ganarás menos puntos.",
+    "question": "¿Estás listo para el desafío musical?",
+    "start": "Comenzar"
+  },
+  "dailySongForm": {
+    "input": "Adivina la canción 🎵 🎸"
+  },
+  "dailySongFeedback": {
+    "fail": "Fallaste!",
+    "failState": "solo te quedan ",
+    "try": "intento",
+    "tries": "intentos",
+    "failDescription": "No lograste adivinar la canción 😔",
+    "failDescription2": "Intenta mañana con un nuevo reto",
+    "win": "Felicidades!",
+    "winDescription": "Tu respuesta es correcta.🥳",
+    "points": "Puntaje final"
+  },
+  "dailySongAlbumInfo": {
+    "info": "Encuentra la canción en Sportify o el video oficial en Youtube",
+    "funFact": "Conoce el fun fact 🤔"
+  },
+  "dailySongFunFact": {
+    "title1": "¿Sabías",
+    "title2": "qué?"
+  }
+}
