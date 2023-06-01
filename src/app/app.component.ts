@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'guest-daily-song';
+export class AppComponent implements OnInit {
 
-  constructor(private translateService: TranslateService) {
+  translateService: TranslateService = inject(TranslateService);
+  auth: AngularFireAuth = inject(AngularFireAuth);
+
+  constructor() {
     const defaultSpanish = 'es';
     const userLocale =
       navigator.languages && navigator.languages.length
@@ -19,4 +22,18 @@ export class AppComponent {
     this.translateService.setDefaultLang(finalUserLocale);
   }
 
+  ngOnInit() {
+    this.loginAnonymously()
+  }
+
+  loginAnonymously() {
+    this.auth.signInAnonymously()
+      .then(userCredential => {
+        const user = userCredential.user;
+        sessionStorage.setItem('anonymousUser', JSON.stringify(user))
+      })
+      .catch(error => {
+        console.error('Anonymous authentication failed:', error);
+      });
+  }
 }
